@@ -174,9 +174,7 @@ Quick overview:
 
 2. Created a Peer connection between our vNets. This will allow traffic to pass between our vNets and regions. This peer connection will make both a connection from our first vNet to our second vNet and a reverse connection from our second vNet back to our first vNet. This will allow traffic to pass in both directions.
  
-![PeeringsELKtoRed]()
- 
-![PeeringsRedtoELK] () 
+![PeeringsELKtoRed](https://github.com/wazzy88/Wshaikh/blob/8bcae66d3207d0832ba8f0282aedcf856ad9547a/Ansible%20-%20ELK/09.04.2022_17.26.32_REC.png)
 
 3. Create a new Ubuntu VM in our virtual network with the following configurations:
 
@@ -190,7 +188,7 @@ Quick overview:
         sudo docker start strange_mclean && sudo docker attach strange_mclean
      ``` 
  
-![connect_on_newVM]()  
+![connect_on_newVM](https://github.com/wazzy88/Wshaikh/blob/34365a69002f9bb30a8f8bcff97281a58ee1d7ca/Ansible%20-%20ELK/09.04.2022_17.35.42_REC.png)  
  
 - Copy the SSH key from the Ansible container on our jump box:
    - RUN `cat id_rsa.pub` Configure a new VM using that SSH key.
