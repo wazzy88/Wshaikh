@@ -3,9 +3,8 @@
 ---
 
 ## ELK-Stack-Project
-**Automated ELK Stack Deployment**
- 
-The files in this repository were used to configure the network depicted below.
+
+ This repository was created to show the configuration of the cloud network built on the azure platform.
 
 ![vNet Diagram]
  
@@ -29,7 +28,7 @@ This document contains the following details:
  
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a traffic to high level cloud infrastructre with monitoring measures and mitigation techniques.
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
@@ -63,13 +62,13 @@ The configuration details of each machine may be found below.
  
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump-Box-Provisioner | Gateway  | 44.77.55.33 ; 10.0.0.4   | Linux            |
-| Web-1        |webserver    | 10.0.0.5     | Linux            |
-| Web-2        |webserver    | 10.0.0.6     | Linux            |
-| ELKServer    |Kibana       | 104.45.159.216 ; 10.1.0.4     | Linux            |
-| RedTeam-LB|Load Balancer| 40.122.215.16| DVWA            |
+| Jump-Box-Provisioner | Gateway  | 20.75.255.192 ; 10.1.0.4   | Linux            |
+| Web-1        |webserver    | 10.1.0.5     | Linux            |
+| Web-2        |webserver    | 10.1.0.6     | Linux            |
+| ELKServer    |Kibana       | 20.117.89.2 ; 10.0.0.4     | Linux            |
+| RedTeam-LB|Load Balancer| 20.216.21.150| DVWA            |
  
-In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability zones: Web-1 + Web-2
+In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability sets as: Web-1 + Web-2
 
 
 ### Access Policies
