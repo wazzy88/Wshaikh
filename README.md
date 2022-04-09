@@ -145,6 +145,10 @@ A summary of the access policies in place can be found in the table below.
 
 ### Part 3 - ELK Configuration/Filebeats/Metric Beats
  
+Elasticsearch, Logstash, and Kibana = ELK, with the addition of Beats for this project.
+
+The goal for the ELK stack is most commonly used for monitoring, troubleshooting and securing IT environments, in this case our cloud environment on Azure. Beats and Logstash take care of data collection and processing, Elasticsearch indexes and stores the data, and Kibana provides a user interface for querying the data and visualizing it (Logz.io_ 2022).
+
 Ansible was used to automate the configuration of the ELK server. This was advantageous because Ansible can be used to easily configure new machines, update programs, and configurations on hundreds of servers at once, and the best part is that the process is the same for multiple machines. 
 
 > What is the main advantage of automating configuration with Ansible?
@@ -195,7 +199,7 @@ How we start?
         sudo docker container list -a
      ``` 
    - ```bash
-        sudo docker start goofy_wright && sudo docker attach goofy_wright
+        sudo docker start strange_mclean && sudo docker attach strange_mclean
      ``` 
  
 ![connect_on_newVM]()  
