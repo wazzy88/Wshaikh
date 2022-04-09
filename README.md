@@ -20,8 +20,6 @@ Part 2
 Part 3
 - Elastic Search, Logstash and Kibana (ELK) Introduction and usage.
 - A description of the investigation completed using Kibana dashboard.
-
-![vNet Diagram]
  
 These files have been tested and used to generate an automated ELK Stack Deployment on Azure. They can be used to either recreate the entire deployment figured below. Otherwise, select portions of the YAML files may be used to install only certain pieces of it, for example, Filebeat and Metricbeat.
 
@@ -32,7 +30,7 @@ These files have been tested and used to generate an automated ELK Stack Deploym
   - [metricbeat-config.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-configuration.yml)
   - [metricbeat-playbook.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-playbook.yml)
  
-### Description of the Topology
+### Part 1 Description of the Topology
 
 The main purpose of this network is to expose a traffic to high level cloud infrastructre with monitoring measures and mitigation techniques.
 
@@ -41,6 +39,8 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 	
 ---
 
+![vNet Diagram]	
+	
 Virtual networks?
 - Azure platform
 - Resource Groups
@@ -49,13 +49,7 @@ Virtual Computing?
 - Network Security Groups
 - Virtual Machines
 - Load Balancers
----
-Jumpbox Useage
-- Containers (Docker)
-- Provisioners (Ansible)
----	
-
-Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
+	Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
 > What aspect of security do load balancers protect?
 - According to [Azure security baseline for Azure Load Balancer](https://bit.ly/3AnSRPV), the load balancer's main purpose is to distribute web traffic across multiple servers. In our network, the load balancer was installed in front of the VM to 
@@ -70,7 +64,11 @@ Load balancing ensures that the application will be highly available, in additio
    - maintain standard security configurations for network devices
    - document traffic configuration rules
    - use automated tools to monitor network resource configurations and detect changes
-
+---
+Jumpbox Useage
+- Containers (Docker)
+- Provisioners (Ansible)
+---	
 
 > What is the advantage of a jump box?
 - A Jump Box or a "Jump Server" is a gateway on a network used to access and manage devices in different security zones. A Jump Box acts as a "bridge" between two trusted networks zones and provides a controlled way to access them. We can block the public IP address associated with the VM. It helps to improve security also prevents all Azure VM’s to expose to the public.
@@ -96,7 +94,7 @@ The configuration details of each machine may be found below.
 In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability sets as: Web-1 + Web-2
 
 
-### Access Policies
+### Part 2 Access Policies
  
 The machines on the internal network are not exposed to the public Internet.
  
@@ -116,7 +114,7 @@ A summary of the access policies in place can be found in the table below.
 ---
 
 
-### ELK Configuration
+### Part 3 ELK Configuration
  
 Ansible was used to automate the configuration of the ELK server. No configuration was performed manually, which is advantageous because Ansible can be used to easily configure new machines, update programs, and configurations on hundreds of servers at once, and the best part is that the process is the same for multiple machines. 
 
