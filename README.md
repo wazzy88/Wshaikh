@@ -42,19 +42,16 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 ![vNet Diagram]	
 	
 Virtual networks?
-- Azure platform
-- Resource Groups
+> Azure platform
+> Resource Groups
 ---
 Virtual Computing?
-- Network Security Groups
-- Virtual Machines
-
-> Virtual Machines are...
-- Load Balancer
-	
-> Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
-
-> What aspect of security do load balancers protect?
+> Network Security Groups
+> Virtual Machines
+-Virtual Machines are...
+> Load Balancer
+- Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
+- What aspect of security do load balancers protect?
 - According to [Azure security baseline for Azure Load Balancer](https://bit.ly/3AnSRPV), the load balancer's main purpose is to distribute web traffic across multiple servers. In our network, the load balancer was installed in front of the VM to 
    - protect Azure resources within virtual networks.
    - monitor and log the configuration and traffic of virtual networks, subnets, and NICs.
@@ -69,8 +66,10 @@ Virtual Computing?
    - use automated tools to monitor network resource configurations and detect changes
 ---
 Jumpbox Useage
-- Containers (Docker)
-- Provisioners (Ansible)
+> Containers (Docker)
+-
+> Provisioners (Ansible)
+-
 ---	
 
 > What is the advantage of a jump box?
