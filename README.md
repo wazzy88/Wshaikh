@@ -41,7 +41,7 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 	
 ---
 
-![vNet Diagram]	
+![vNet Diagram]()
 	
 Virtual networks?
 > Azure platform
