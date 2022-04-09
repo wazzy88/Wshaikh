@@ -49,6 +49,9 @@ Jumpbox Useage
 - Containers (Docker)
 - Provisioners (Ansible)
 ---	
+	
+<details>
+<summary> <b> Click here to view Target Machines & Beats. </b> </summary>
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
