@@ -2,7 +2,7 @@
 
 ---
 
-## ELK-Stack-Project
+## ELK-Stack-Project Start to End walkthrough
 
 Introduction
 
@@ -90,31 +90,30 @@ Virtual Computing?
 	
 ---
 Jumpbox Useage
+	
+> What is the advantage of a jumpbox or Jump server?
+- A "bridge" that connects to the NSG and in-turn to the outside world (internet). It provides a controlled way to access the vNet  It helps to improve security also prevents all Azure VM’s to expose to the public.
+	
 > Containers (Docker)
--
+- A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.Container images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine (docker_2022). 
+
+![Docker]()	
+	
 > Provisioners (Ansible)
--
+- A lighter version of Virtual Machine! Smaller, lighter, however does not need to be a full virtual machine and still carries out the application that another other VM would do. 
+	
+![Ansible]()
+	
 ---	
 
-> What is the advantage of a jump box?
-- A Jump Box or a "Jump Server" is a gateway on a network used to access and manage devices in different security zones. A Jump Box acts as a "bridge" between two trusted networks zones and provides a controlled way to access them. We can block the public IP address associated with the VM. It helps to improve security also prevents all Azure VM’s to expose to the public.
-
-Integrating an Elastic Stack server allows us to easily monitor the vulnerable VMs for changes to their file systems and system metrics such as privilege escalation failures, SSH logins activity, CPU and memory usage, etc.
-
-> What does Filebeat watch for?
-- Filebeat helps keep things simple by offering a lightweight way (low memory footprint) to forward and centralize logs, files and watches for changes.
-
-> What does Metricbeat record?
-- Metricbeat helps monitor servers by collecting metrics from the system and services running on the server so it records machine metrics and stats, such as uptime.
-
-The configuration details of each machine may be found below.
+> The configuration details of each machine may be found below.
  
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump-Box-Provisioner | Gateway  | 20.75.255.192 ; 10.1.0.4   | Linux            |
-| Web-1        |webserver    | 10.1.0.5     | Linux            |
-| Web-2        |webserver    | 10.1.0.6     | Linux            |
-| ELKServer    |Kibana       | 20.117.89.2 ; 10.0.0.4     | Linux            |
+| Web-1(VM)       |webserver    | 10.1.0.5     | Linux            |
+| Web-2(VM)        |webserver    | 10.1.0.6     | Linux            |
+| ELKServer(VM)    |Kibana       | 20.117.89.2 ; 10.0.0.4     | Linux            |
 | RedTeam-LB|Load Balancer| 20.216.21.150| DVWA            |
  
 In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability sets as: Web-1 + Web-2
