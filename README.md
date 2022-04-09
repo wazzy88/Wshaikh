@@ -103,7 +103,7 @@ Jumpbox Useage
 > Provisioners (Ansible)
 - A lighter version of Virtual Machine! Smaller, lighter, however does not need to be a full virtual machine and still carries out the application that another other VM would do. 
 	
-![Ansible]()
+![Ansible](https://github.com/wazzy88/Wshaikh/blob/c0ea68d181e128218da236c6591cd1d7ba1820b8/Azure%20Pictures/0_Sr1T30hc8WT269jV.jpg)
 	
 ---	
 
@@ -117,17 +117,17 @@ Jumpbox Useage
 | ELKServer(VM)    |Kibana       | 20.117.89.2 ; 10.0.0.4     | Linux            |
 | RedTeam-LB|Load Balancer| 20.216.21.150| DVWA            |
  
-In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability sets as: Web-1 + Web-2
+In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability sets as: Web-1 and Web-2
 	
 </details>
 
 ---
 
-### Part 2 Access Policies
+### Part 2 - Access Policies
  
-The machines on the internal network are not exposed to the public Internet.
+The idea in our cloud was to bring a 'zero trust model'. Here access was given via NSG through rule setting on specific IP Adresses (listed below). This was companied with crypto keys - public key authentication to help ensure our network held a critiera for securirty.
  
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 47.185.204.83 Machines within the network can only be accessed by SSH from Jump Box.
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:20.75.255.192. Machines within the network can only be accessed by SSH with crypto key to the Jump Box.
  
 A summary of the access policies in place can be found in the table below.
  
@@ -143,9 +143,9 @@ A summary of the access policies in place can be found in the table below.
 ---
 
 
-### Part 3 ELK Configuration
+### Part 3 - ELK Configuration/Filebeats/Metric Beats
  
-Ansible was used to automate the configuration of the ELK server. No configuration was performed manually, which is advantageous because Ansible can be used to easily configure new machines, update programs, and configurations on hundreds of servers at once, and the best part is that the process is the same for multiple machines. 
+Ansible was used to automate the configuration of the ELK server. This was advantageous because Ansible can be used to easily configure new machines, update programs, and configurations on hundreds of servers at once, and the best part is that the process is the same for multiple machines. 
 
 > What is the main advantage of automating configuration with Ansible?
 - Ansible is focusing on bringing a server to a certain state of operation.
