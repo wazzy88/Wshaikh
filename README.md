@@ -81,10 +81,10 @@ A summary of the access policies in place can be found in the table below.
  
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump-Box-Provisioner | Yes                 | 47.185.204.83        |
-| ELKServer      | Yes                  |  47.185.204.83:5601        |
-| DVWA 1   | No                  |  10.0.0.1-254        |
-| DVWA 2   | No                  |  10.0.0.1-254        |
+| Jump-Box-Provisioner | Yes                 | 20.75.255.192        |
+| ELKServer      | Yes                  |  20.117.89.2:5601        |
+| DVWA 1   | No                  |  10.1.0.1-254        |
+| DVWA 2   | No                  |  10.1.0.1-254        |
 
 
  
@@ -93,7 +93,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### ELK Configuration
  
-Ansible was used to automate the configuration of the ELK server. No configuration was performed manually, which is advantageous because Ansible can be used to easily configure new machines, update programs, and configurations on hundreds of servers at once, and the best part is that the process is the same whether we're managing one machine or dozens and even hundreds.
+Ansible was used to automate the configuration of the ELK server. No configuration was performed manually, which is advantageous because Ansible can be used to easily configure new machines, update programs, and configurations on hundreds of servers at once, and the best part is that the process is the same for multiple machines. 
 
 > What is the main advantage of automating configuration with Ansible?
 - Ansible is focusing on bringing a server to a certain state of operation.
@@ -103,7 +103,7 @@ Ansible was used to automate the configuration of the ELK server. No configurati
 
 ---
  
-We will configure an ELK server within virtual network. Specifically,
+How we start?
  
 - Deployed a new VM on our virtual network.
 - Created an Ansible play to install and configure an ELK instance.
@@ -115,7 +115,7 @@ We will configure an ELK server within virtual network. Specifically,
 - Make sure this vNet is located in a new region and not the same region as our other VM's, which region we select is not important as long as it's a different US region than our other resources, we can also leave the rest of the settings at default.
 - In this example, that the IP Addressing has automatically created a new network space of 10.1.0.0/16. If our network is different (10.2.0.0 or 10.3.0.0) it is ok as long as we accept the default settings. Azure automatically creates a network that will work.
 
-![Create vNet](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Create%20vNet.png)  
+![Create vNet]()  
 
 2. Create a Peer connection between our vNets. This will allow traffic to pass between our vNets and regions. This peer connection will make both a connection from our first vNet to our second vNet and a reverse connection from our second vNet back to our first vNet. This will allow traffic to pass in both directions.
 - Navigate to `Virtual Network` in the Azure Portal.
@@ -126,9 +126,9 @@ We will configure an ELK server within virtual network. Specifically,
 - Choose our original RedTeam vNet in the dropdown labeled `Virtual Network`.
 - Leave all other settings at their defaults.
  
-![PeeringsELKtoRed](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/ELKtoRed.png) 
+![PeeringsELKtoRed]()
  
-![PeeringsRedtoELK](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/RedtoELK.png)  
+![PeeringsRedtoELK] () 
 
 3. Create a new Ubuntu VM in our virtual network with the following configurations:
 - The VM must have a public IP address.
@@ -146,12 +146,12 @@ We will configure an ELK server within virtual network. Specifically,
         sudo docker start goofy_wright && sudo docker attach goofy_wright
      ``` 
  
-![connect_on_newVM](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/connect_on_newVM.png)  
+![connect_on_newVM]()  
  
 - Copy the SSH key from the Ansible container on our jump box:
    - RUN `cat id_rsa.pub` Configure a new VM using that SSH key.
  
-![RSA](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/id_rsa.pub_on_newVM.png) 
+![RSA]() 
  
 
 #### Created an Ansible play to install and configure an ELK instance.
@@ -162,7 +162,7 @@ In this step, we have to:
 - From our Ansible container, add the new VM to Ansible's hosts file.
    - RUN `nano /etc/ansible/hosts` and put our IP with `ansible_python_interpreter=/usr/bin/python3`
 
-![hosts file editing](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/CatHosts.png)  
+![hosts file editing]()  
 
 - In the below play, representing the header of the YAML file, I defined the title of my playbook based on the playbook's main goal by setting the keyword 'name:' to: "Configure Elk VM with Docker". Next, I defined the user account for the SSH connection, by setting the keyword 'remote_user:' to "sysadmin" then activated privilege escalation by setting the keyword 'become:' to "true". 
  
