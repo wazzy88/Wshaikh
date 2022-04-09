@@ -69,7 +69,7 @@ Virtual Computing?
 	
  - The brains of the operation -computers! My off-premesis computers built on the cloud are vital to the enrity of the network. They run the commands to make connections for pentesting and also to house containers.  
 	
-![Virtual Machines - VMs]()
+![Virtual Machines - VMs](https://github.com/wazzy88/Wshaikh/blob/019e7b6b84aa59e0f4f4563b976bcb6803307a56/Azure%20Pictures/09.04.2022_13.31.16_REC.png)
 	
 > Load Balancer
 
