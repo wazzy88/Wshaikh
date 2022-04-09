@@ -9,9 +9,9 @@ Introduction
  This repository was created to show the configuration of the cloud network built on the azure platform, along with the penetration testing of the cloud infrastructure.
  
  The objective here is to briefly cover the following in three main parts:
-Part 1 
-- A visual of the network via a network diagram.
-- A description of the deployment of the cloud infrastucture toplogy
+-Part 1 
+.. A visual of the network via a network diagram.
+.. A description of the deployment of the cloud infrastucture toplogy
 Part 2
 - Tables specifying access policies and network addresses.
 Part 3
