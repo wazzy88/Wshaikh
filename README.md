@@ -86,7 +86,7 @@ Virtual Computing?
    - document traffic configuration rules
    - use automated tools to monitor network resource configurations and detect changes
 	
-![Load Balancer]()
+![Load Balancer](https://github.com/wazzy88/Wshaikh/blob/58070d88bab622e39b9a026b4d142d6b4fa7d56e/Azure%20Pictures/09.04.2022_14.12.28_REC.png)
 	
 ---
 Jumpbox Useage
