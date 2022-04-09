@@ -52,7 +52,9 @@ Virtual networks?
 ![Azure](https://github.com/wazzy88/Wshaikh/blob/907361d132b94690a9b37f309548b1cb019df902/Azure%20Pictures/09.04.2022_11.47.37_REC.png)
 	
 > Resource Groups
-- This cloud starts with a resouce group. A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
+- This cloud build starts with a resouce group. A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
+	
+![vNet Diagram]()
 	
 ---
 Virtual Computing?
