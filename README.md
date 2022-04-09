@@ -159,11 +159,12 @@ Ansible was used to automate the configuration of the ELK server. This was advan
 
 ---
  
-How we start?
+Quick overview:
  
-- Deployed a new VM on our virtual network.
+- Deployed a new ELK VM on a new ELK virtual network.
 - Created an Ansible play to install and configure an ELK instance.
 - Restricted access to the new server.
+- Viewed results on Kibana dashboard.
 
 #### Deployed a new VM on our virtual network. 
  
