@@ -9,12 +9,12 @@ The files in this repository were used to configure the network depicted below.
  
 These files have been tested and used to generate an automated ELK Stack Deployment on Azure. They can be used to either recreate the entire deployment figured below. Otherwise, select portions of the YAML files may be used to install only certain pieces of it, for example, Filebeat and Metricbeat.
 
-  - [pentest.yml]()
-  - [install-elk.yml]()
-  - [filebeat-config.yml]()
-  - [filebeat-playbook.yml]()
-  - [metricbeat-config.yml]()
-  - [metricbeat-playbook.yml]()
+  - [pentest.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/ansible_config.yml)
+  - [install-elk.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/install-elk.yml)
+  - [filebeat-config.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/filebeat-configuration.yml)
+  - [filebeat-playbook.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/filebeat-playbook.yml)
+  - [metricbeat-config.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-configuration.yml)
+  - [metricbeat-playbook.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-playbook.yml)
  
 This document contains the following details:
 - Description of the Topology
