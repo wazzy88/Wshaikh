@@ -33,6 +33,8 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 
 <details>
 <summary> <b> Click here to view Virtual Networks overview. </b> </summary>
+	
+---
 
 Virtual networks?
 - Azure platform
