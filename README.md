@@ -63,17 +63,17 @@ Virtual Computing?
 	
  - A traffic filter, by creating 'rules' for both inbound and outbound connections to the cloud. This vital tool was essential for being the gatekeeper of harmful and unwanted connections to my clouds specific virtual networks (Was_RG).
 	
-![NSG]()
+![NSG](https://github.com/wazzy88/Wshaikh/blob/bdd70501ec7755838a515674fe9056a039bc88f8/Azure%20Pictures/09.04.2022_13.20.49_REC.png)
 	
 > Virtual Machines
 	
  - The brains of the operation -computers! My off-premesis computers built on the cloud are vital to the enrity of the network. They run the commands to make connections for pentesting and also to house containers.  
 	
+![Virtual Machines - VMs]()
+	
 > Load Balancer
 
-- Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
-- What aspect of security do load balancers protect?
-- According to [Azure security baseline for Azure Load Balancer](https://bit.ly/3AnSRPV), the load balancer's main purpose is to distribute web traffic across multiple servers. In our network, the load balancer was installed in front of the VM to 
+- The load balancer's main purpose is to distribute web traffic across multiple servers. In our network, the load balancer was installed in front of the VM to 
    - protect Azure resources within virtual networks.
    - monitor and log the configuration and traffic of virtual networks, subnets, and NICs.
    - protect critical web applications
@@ -85,6 +85,9 @@ Virtual Computing?
    - maintain standard security configurations for network devices
    - document traffic configuration rules
    - use automated tools to monitor network resource configurations and detect changes
+	
+![Load Balancer]()
+	
 ---
 Jumpbox Useage
 > Containers (Docker)
