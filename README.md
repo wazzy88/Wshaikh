@@ -97,6 +97,7 @@ In addition to the above, Azure has provisioned a load balancer in front of all 
 	
 </details>
 
+---
 
 ### Part 2 Access Policies
  
