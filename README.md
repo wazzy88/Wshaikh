@@ -48,9 +48,11 @@ Virtual networks?
 Virtual Computing?
 - Network Security Groups
 - Virtual Machines
-- Load Balancers
+
+> Virtual Machines are...
+- Load Balancer
 	
-.........Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
+> Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
 > What aspect of security do load balancers protect?
 - According to [Azure security baseline for Azure Load Balancer](https://bit.ly/3AnSRPV), the load balancer's main purpose is to distribute web traffic across multiple servers. In our network, the load balancer was installed in front of the VM to 
