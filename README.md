@@ -35,6 +35,8 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 <summary> <b> Click here to view Virtual Networks overview. </b> </summary>
 
 What ware virtual networks?
+	
+---	
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
