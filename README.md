@@ -40,14 +40,16 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 <summary> <b> Click here to view Virtual Networks overview. </b> </summary>
 	
 ---
-
+	
+> Cloud Diagram
+	
 ![vNet Diagram]()
 	
 Virtual networks?
 > Azure platform
 - The Azure cloud platform is designed to help users build, run, and manage applications across multiple clouds with the tools and frameworks of your choice. Thus, for the purpose of this project the cloud infrastructure was build using this very tool.
 
-![vNet Diagram]()
+![Azure](https://github.com/wazzy88/Wshaikh/blob/907361d132b94690a9b37f309548b1cb019df902/Azure%20Pictures/09.04.2022_11.47.37_REC.png)
 	
 > Resource Groups
 - This cloud starts with a resouce group. A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
