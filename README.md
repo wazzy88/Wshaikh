@@ -10,7 +10,7 @@ Introduction
  
  The objective here is to briefly cover the following:
  
-A visual of the network via a network diagram.
+- A visual of the network via a network diagram.
 A description of the deployment of the cloud infrastucture toplogy
 Tables specifying access policies and network addresses.
 Elastic Search, Logstash and Kibana (ELK) Introduction and usage.
