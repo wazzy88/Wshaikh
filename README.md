@@ -8,7 +8,7 @@ Introduction
 
  This repository was created to show the configuration of the cloud network built on the azure platform, along with the penetration testing of the cloud infrastructure.
  
- The objective here is to briefly cover the following in three main parts:
+ The objective here is to briefly cover the following in three main areas:
  
 Part 1 
 - A visual of the network via a network diagram.
@@ -18,7 +18,7 @@ Part 2
 - Tables specifying access policies and network addresses.
 
 Part 3
-- Elastic Search, Logstash and Kibana (ELK) Introduction and usage.
+- Elastic Search, Logstash and Kibana (ELK) introduction and usage.
 - A description of the investigation completed using Kibana dashboard.
  
 These files have been tested and used to generate an automated ELK Stack Deployment on Azure. They can be used to either recreate the entire deployment figured below. Otherwise, select portions of the YAML files may be used to install only certain pieces of it, for example, Filebeat and Metricbeat.
@@ -45,7 +45,13 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 	
 Virtual networks?
 > Azure platform
+- The Azure cloud platform is designed to help users build, run, and manage applications across multiple clouds with the tools and frameworks of your choice. Thus, for the purpose of this project the cloud infrastructure was build using this very tool.
+
+![vNet Diagram]()
+	
 > Resource Groups
+- This cloud starts with a resouce group. A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
+	
 ---
 Virtual Computing?
 > Network Security Groups
