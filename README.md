@@ -54,16 +54,20 @@ Virtual networks?
 > Resource Groups
 - This cloud build starts with a resouce group. A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. 
 	
-![vNet Diagram]()
+![Azure RG](https://github.com/wazzy88/Wshaikh/blob/7e6b235a4209f4a6d7105f815160104d80737ea6/Azure%20Pictures/09.04.2022_13.10.30_REC.png)
 	
 ---
 Virtual Computing?
 	
 > Network Security Groups
 	
+ - A traffic filter, by creating 'rules' for both inbound and outbound connections to the cloud. This vital tool was essential for being the gatekeeper of harmful and unwanted connections to my clouds specific virtual networks (Was_RG).
+	
+![NSG]()
+	
 > Virtual Machines
 	
--Virtual Machines are...
+ - The brains of the operation -computers! My off-premesis computers built on the cloud are vital to the enrity of the network. They run the commands to make connections for pentesting and also to house containers.  
 	
 > Load Balancer
 
