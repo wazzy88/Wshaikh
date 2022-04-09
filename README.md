@@ -94,10 +94,11 @@ Jumpbox Useage
 > What is the advantage of a jumpbox or Jump server?
 - A "bridge" that connects to the NSG and in-turn to the outside world (internet). It provides a controlled way to access the vNet  It helps to improve security also prevents all Azure VM’s to expose to the public.
 	
+
+![JBOX](https://github.com/wazzy88/Wshaikh/blob/bfbe6c4f9e38101e628ef7623d136035afb02de9/Azure%20Pictures/09.04.2022_13.55.02_REC.png)
+	
 > Containers (Docker)
 - A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.Container images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine (docker_2022). 
-
-![Docker]()	
 	
 > Provisioners (Ansible)
 - A lighter version of Virtual Machine! Smaller, lighter, however does not need to be a full virtual machine and still carries out the application that another other VM would do. 
