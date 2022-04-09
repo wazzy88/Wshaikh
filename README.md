@@ -30,7 +30,7 @@ These files have been tested and used to generate an automated ELK Stack Deploym
   - [metricbeat-config.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-configuration.yml)
   - [metricbeat-playbook.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-playbook.yml)
  
-### Part 1 Description of the Topology
+### Part 1 - Description of the Topology
 
 The main purpose of this network is to expose a traffic to high level cloud infrastructre with monitoring measures and mitigation techniques.
 
@@ -94,6 +94,8 @@ The configuration details of each machine may be found below.
 | RedTeam-LB|Load Balancer| 20.216.21.150| DVWA            |
  
 In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability sets as: Web-1 + Web-2
+	
+</details>
 
 
 ### Part 2 Access Policies
