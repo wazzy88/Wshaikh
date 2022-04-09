@@ -166,35 +166,22 @@ Quick overview:
 - Restricted access to the new server.
 - Viewed results on Kibana dashboard.
 
-#### Deployed a new VM on our virtual network. 
+#### Created a new virtual network for the ELK stack (steps below). 
  
-1. Create a new vNet located in the same resource group we have been using. 
-- Make sure this vNet is located in a new region and not the same region as our other VM's, which region we select is not important as long as it's a different US region than our other resources, we can also leave the rest of the settings at default.
-- In this example, that the IP Addressing has automatically created a new network space of 10.1.0.0/16. If our network is different (10.2.0.0 or 10.3.0.0) it is ok as long as we accept the default settings. Azure automatically creates a network that will work.
+1. Created a new vNet located in the same resource group, in a different region, then the original due to subscription limitations.
 
-![Create vNet]()  
+![Create vNet](https://github.com/wazzy88/Wshaikh/blob/4fbdf092775329c4275442e97dd5f133cdd6dde6/Ansible%20-%20ELK/09.04.2022_17.26.02_REC.png)  
 
-2. Create a Peer connection between our vNets. This will allow traffic to pass between our vNets and regions. This peer connection will make both a connection from our first vNet to our second vNet and a reverse connection from our second vNet back to our first vNet. This will allow traffic to pass in both directions.
-- Navigate to `Virtual Network` in the Azure Portal.
-- Select our new vNet to view it's details.
-- Under `Settings` on the left side, select `Peerings`.
-- Click the + Add button to create a new Peering.
-- A unique name of the connection from our new vNet to our old vNet such as depicted example below.
-- Choose our original RedTeam vNet in the dropdown labeled `Virtual Network`.
-- Leave all other settings at their defaults.
+2. Created a Peer connection between our vNets. This will allow traffic to pass between our vNets and regions. This peer connection will make both a connection from our first vNet to our second vNet and a reverse connection from our second vNet back to our first vNet. This will allow traffic to pass in both directions.
  
 ![PeeringsELKtoRed]()
  
 ![PeeringsRedtoELK] () 
 
 3. Create a new Ubuntu VM in our virtual network with the following configurations:
-- The VM must have a public IP address.
-- The VM must be added to the new region in which we created our new vNet. We want to make sure we select our new vNEt and allow a new basic Security Group to be created for this VM.
-- The VM must use the same SSH keys as our WebserverVM's. This should be the ssh keys that were created on the Ansible container that's running on our jump box.
-- After creating the new VM in Azure, verify that it works as expected by connecting via SSH from the Ansible container on our jump box VM.
 
    - ```bash
-        ssh sysadmin@<jump-box-provisioner>
+        ssh azuresuser@<VMJBOX-provisioner>
      ``` 
    - ```bash
         sudo docker container list -a
@@ -208,9 +195,6 @@ Quick overview:
 - Copy the SSH key from the Ansible container on our jump box:
    - RUN `cat id_rsa.pub` Configure a new VM using that SSH key.
  
-![RSA]() 
- 
-
 #### Created an Ansible play to install and configure an ELK instance.
 
 In this step, we have to:
