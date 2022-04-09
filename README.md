@@ -4,7 +4,17 @@
 
 ## ELK-Stack-Project
 
- This repository was created to show the configuration of the cloud network built on the azure platform.
+Introduction
+
+ This repository was created to show the configuration of the cloud network built on the azure platform, along with the penetration testing of the cloud infrastructure.
+ 
+ The objective here is to briefly cover the following:
+ 
+A visual of the network via a network diagram.
+A description of the deployment of the cloud infrastucture toplogy
+Tables specifying access policies and network addresses.
+Elastic Search, Logstash and Kibana (ELK) Introduction and usage.
+A description of the investigation completed using Kibana dashboard.
 
 ![vNet Diagram]
  
@@ -16,15 +26,6 @@ These files have been tested and used to generate an automated ELK Stack Deploym
   - [filebeat-playbook.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/filebeat-playbook.yml)
   - [metricbeat-config.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-configuration.yml)
   - [metricbeat-playbook.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/metricbeat-playbook.yml)
-
- 
-This document contains the following details:
-- Description of the Topology
-- Access Policies
-- ELK Configuration
-- Beats in Use
-- Machines Being Monitored
-- How to Use the Ansible Build
  
 ### Description of the Topology
 
@@ -249,7 +250,7 @@ In this play, the ansible systemd module is used to start docker on boot, settin
         name: docker
         enabled: yes
 ```
-![Install_elk_yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Install_elk_yml.png)
+![Install_elk_yml]()
 
 Now we can start launching and exposing the container by run
 
@@ -259,13 +260,13 @@ ansible-playbook install-elk.yml
 
 The following screenshot displays the result of running `install-elk.yml`
 
-![Docker ELKResult output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Install_elk_result.png)
+![Docker ELKResult output]()
 
 SSH to our container: ```ssh sysadmin@10.1.0.4``` and RUN ```sudo docker ps```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the Elastic Stack instance.
 
-![Docker InstallELK output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/InstallELK.png)
+![Docker InstallELK output]()
 
 Logging into the Elk server and manually launch the ELK container with: 
 
@@ -276,7 +277,7 @@ then ```curl http://localhost:5601/app/kibana``` does return HTML.
 
 The following screenshot displays the result of running `curl` after start ELK container
 
-![Docker curl output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/CurlResult.png)
+![Docker curl output]()
 
 #### Restricted access to the new server.
 	
@@ -284,11 +285,11 @@ This step is to restrict access to the ELK VM using Azure's network security gro
 
 Go to Network Security Group to config our host IP to Kibana as follow
 
-![Docker InboundSecRules output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Docker%20InboundSecRules%20output.png)
+![Docker InboundSecRules output]()
 
 Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kibana 
  
-![Access_Kibana](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Access_Kibana.png)
+![Access_Kibana]()
 
 </details>
 
@@ -329,7 +330,7 @@ password: "changeme"
 host: "10.1.0.4:5601"
 - Save both files filebeat-config.yml and metricbeat-config.yml into `/etc/ansible/files/`
 
-![files_FMconfig](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/files_FMconfig.png) 
+![files_FMconfig]() 
  
  
 Next, create a new playbook that installs Filebeat & Metricbeat, and then create a playbook file, `filebeat-playbook.yml` & `metricbeat-playbook.yml`
@@ -370,17 +371,17 @@ RUN `nano filebeat-playbook.yml` to enable the filebeat service on boot by Fileb
 
 ```
 
-![Filebeat_playbook](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Filebeat_playbook.png) 
+![Filebeat_playbook]() 
  
 - RUN `ansible-playbook filebeat-playbook.yml`
 
-![Filebeat_playbook_result](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Filebeat_playbook_result.png)  
+![Filebeat_playbook_result]()  
 
 Verify that our playbook is completed by navigate back to the Filebeat installation page on the ELK server GUI
 
-![Filebeat_playbook_verify](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Filebeat_playbook_verify.png)
+![Filebeat_playbook_verify]()
 	
-![Filebeat_playbook_verify1](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Filebeat_playbook_verify1.png)
+![Filebeat_playbook_verify1]()
 		
 	
 `Metricbeat`: Metricbeat detects changes in system metrics, such as CPU usage and memory usage.
@@ -462,13 +463,13 @@ To do so I used the following short script to automate 1000 failed SSH login att
 for i in {1..1000}; do ssh Web_1@10.0.0.5; done
 ```
 
-![ssh failed attempts](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/ssh%20failed%20attempts.png)
+![ssh failed attempts]()
 
 
 Next We check Kibana to see if the failed attempts were logged:
 
 
-![filebeat failed ssh attempts](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/filebeat%20failed%20ssh%20attempts.png)
+![filebeat failed ssh attempts]()
 
 I can see that all the failed attempts were detected and sent to Kibana.
 
@@ -549,12 +550,12 @@ sudo stress --cpu 1
 	
 Next, view the Metrics page for that VM in Kibana and comparing 2 of web servers to see the differences in CPU usage, confirmed that `metricbeat` is capturing the increase in CPU usage due to our stress command:
 
-![cpu stress test results](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/cpu%20stress%20test%20results.png)
+![cpu stress test results]()
 
 
 Another view of the CPU usage metrics Kibana collected:
 
-![cpu stress test results graph](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/cpu%20stress%20test%20results%20graph.png)
+![cpu stress test results graph]()
 
 
 #### Generate a high amount of web requests to both web servers and make sure that Kibana is picking them up.
@@ -569,7 +570,7 @@ This time we will generate a high amount of web requests directed to one of my w
 
 2. We need to add a new firewall rule to allow my Jump Box (10.0.0.4) to connect to my web servers over HTTP on port 80. To do so, I add a new Inbound Security Rule to Red-Team Network Security Group:
 
-![jump to http to webservers](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/jump%20to%20http%20to%20webservers.png)
+![jump to http to webservers]()
 
 
 3. Run the following command to download the file `index.html` from Web-1 VM:
@@ -580,7 +581,7 @@ This time we will generate a high amount of web requests directed to one of my w
 
 Output of the command:
 
-![index html download](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/index%20html%20download.png)
+![index html download]()
 
 
 4. Confirm that the file has been downloaded with the `ls` command:
@@ -604,7 +605,7 @@ The result is that the `Load`, `Memory Usage` and `Network Traffic` were hit as 
 After stopping the `wget` command, I can see that thousands of index.html files were created (as seen below).
 
 
-![index html files](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/index%20html%20files.png)
+![index html files]()
 
 
 I can use the following command to clean that up:
@@ -616,7 +617,7 @@ rm *
 Now if we use `ls` again, the directory is a lot cleaner:
 
 
-![directory cleanup](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/directory%20cleanup.png)
+![directory cleanup]()
 
 
 I can also avoid the creation of the `index.html` file by adding the flag `-O` to my command so that I can specify a destination file where all the `index.html` files will be concatenated and written to.
