@@ -34,10 +34,18 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 <details>
 <summary> <b> Click here to view Virtual Networks overview. </b> </summary>
 
-What ware virtual networks?
-	
----	
----	
+Virtual networks?
+- Azure platform
+- Resource Groups
+---
+Virtual Computing?
+- Network Security Groups
+- Virtual Machines
+- Load Balancers
+---
+Jumpbox Useage
+- Containers (Docker)
+- Provisioners (Ansible)
 ---	
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
