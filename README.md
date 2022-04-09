@@ -11,10 +11,10 @@ Introduction
  The objective here is to briefly cover the following:
  
 - A visual of the network via a network diagram.
-A description of the deployment of the cloud infrastucture toplogy
-Tables specifying access policies and network addresses.
-Elastic Search, Logstash and Kibana (ELK) Introduction and usage.
-A description of the investigation completed using Kibana dashboard.
+- A description of the deployment of the cloud infrastucture toplogy
+- Tables specifying access policies and network addresses.
+- Elastic Search, Logstash and Kibana (ELK) Introduction and usage.
+- A description of the investigation completed using Kibana dashboard.
 
 ![vNet Diagram]
  
@@ -30,6 +30,11 @@ These files have been tested and used to generate an automated ELK Stack Deploym
 ### Description of the Topology
 
 The main purpose of this network is to expose a traffic to high level cloud infrastructre with monitoring measures and mitigation techniques.
+
+<details>
+<summary> <b> Click here to view Virtual Networks overview. </b> </summary>
+
+What ware virtual networks?
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
