@@ -49,6 +49,7 @@ Virtual Computing?
 - Network Security Groups
 - Virtual Machines
 - Load Balancers
+	
 	Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
 > What aspect of security do load balancers protect?
