@@ -290,38 +290,15 @@ Now we can start launching and exposing the container by run
 ansible-playbook install-elk.yml
 ```
 
-The following screenshot displays the result of running `install-elk.yml`
-
-![Docker ELKResult output]()
-
-SSH to our container: ```ssh sysadmin@10.1.0.4``` and RUN ```sudo docker ps```
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the Elastic Stack instance.
-
-![Docker InstallELK output]()
-
-Logging into the Elk server and manually launch the ELK container with: 
-
-```bash
-sudo docker start elk
-```
-then ```curl http://localhost:5601/app/kibana``` does return HTML.
-
-The following screenshot displays the result of running `curl` after start ELK container
-
-![Docker curl output]()
-
 #### Restricted access to the new server.
 	
-This step is to restrict access to the ELK VM using Azure's network security groups (NSGs). We need to add public IP address to a whitelist, just as we did when clearing access to jump box.
+This step is to restrict access to the ELK VM using Azure's from the ELK Network security group. See below:
 
-Go to Network Security Group to config our host IP to Kibana as follow
-
-![Docker InboundSecRules output]()
+![Docker InboundSecRules output](https://github.com/wazzy88/Wshaikh/blob/bd271b48579cef9fe6cfeec8954a2803d53296be/Resources/ELK%20allow%20from%20IP.png)
 
 Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kibana 
  
-![Access_Kibana]()
+![Access_Kibana](https://github.com/wazzy88/Wshaikh/blob/bd271b48579cef9fe6cfeec8954a2803d53296be/Resources/Kibana.png)
 
 </details>
 
@@ -344,11 +321,12 @@ I have installed the following Beats on these machines:
 ---
 
 	
-These Beats allow us to collect the following information from each machine:
+These Beats allow us to collect the following information from each machine, so what do they do?
 
-`Filebeat`: Filebeat detects changes to the filesystem. I use it to collect system logs and more specifically, I use it to detect SSH login attempts and failed sudo escalations.
-
-We will create a [filebeat-config.yml]() and [metricbeat-config.yml]() configuration files, after which we will create the Ansible playbook files for both of them.
+- Filebeat: Filebeat detects changes to the filesystem. 
+- After which we will create the Ansible playbook files for both of them.
+	
+![filebeat-config.yml]() 
 
 Once we have this file on our Ansible container, edit it as specified:
 - The username is elastic and the password is changeme.
@@ -403,15 +381,13 @@ RUN `nano filebeat-playbook.yml` to enable the filebeat service on boot by Fileb
 
 ```
 
-![Filebeat_playbook]() 
+![Filebeat_playbook](https://github.com/wazzy88/Wshaikh/blob/bd271b48579cef9fe6cfeec8954a2803d53296be/Resources/Filebeat%20playbookyml.png) 
  
 - RUN `ansible-playbook filebeat-playbook.yml`
 
-![Filebeat_playbook_result]()  
+![Filebeat_playbook_install](https://github.com/wazzy88/Wshaikh/blob/bd271b48579cef9fe6cfeec8954a2803d53296be/Resources/Installing%20filebeat.png)  
 
 Verify that our playbook is completed by navigate back to the Filebeat installation page on the ELK server GUI
-
-![Filebeat_playbook_verify]()
 	
 ![Filebeat_playbook_verify1]()
 		
