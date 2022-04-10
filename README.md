@@ -315,7 +315,7 @@ I have installed the following Beats on these machines:
 - Metricbeat
 
 <details>
-<summary> <b> Click here to view Target Machines & Beats. </b> </summary>
+<summary> <b> Click here to view File and Metric Beats. </b> </summary>
 
 ---
 
