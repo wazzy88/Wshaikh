@@ -43,7 +43,7 @@ The main purpose of this network is to expose a traffic to high level cloud infr
 	
 > Cloud Diagram
 	
-![vNet Diagram]()
+![vNet Diagram](https://github.com/wazzy88/Wshaikh/blob/9cca12bcc4bc06cbdb19967edbd6798e748d6c93/Resources/10.04.2022_12.14.42_REC.png)
 	
 Virtual networks?
 > Azure platform
