@@ -20,6 +20,7 @@ Part 2
 Part 3
 - Elastic Search, Logstash and Kibana (ELK) introduction and usage.
 - A description of the investigation completed using Kibana dashboard.
+- A description of the file and metric beats applications. 
  
 The six files below have been applied and tested to generate an automated ELK Stack Deployment on Azure. A more detailed walkthrough is explained in the readme below.
 
@@ -302,7 +303,7 @@ Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kiba
 
 ---
 
-### Target Machines & Beats
+### File and Metric Beats
 This ELK server is configured to monitor the following machines:
 
 - Web-1 (DVWA 1) | 10.1.0.5
