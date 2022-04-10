@@ -336,14 +336,11 @@ password: "changeme"
 - Scroll to line #1806 and replace the IP address with the IP address of our ELK machine.
 	setup.kibana:
 host: "10.1.0.4:5601"
-- Save both files filebeat-config.yml and metricbeat-config.yml into `/etc/ansible/files/`
-
-![files_FMconfig]() 
- 
+- Save both files filebeat-config.yml and metricbeat-config.yml into `/etc/ansible/files/` 
  
 Next, create a new playbook that installs Filebeat & Metricbeat, and then create a playbook file, `filebeat-playbook.yml` & `metricbeat-playbook.yml`
 
-RUN `nano filebeat-playbook.yml` to enable the filebeat service on boot by Filebeat playbook template below:
+This is done by running, `nano filebeat-playbook.yml` to enable the filebeat service on start by Filebeat playbook template below:
 
 ```yaml
 ---
