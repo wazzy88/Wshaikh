@@ -201,7 +201,7 @@ In this step, we have to:
 - From our Ansible container, add the new VM to Ansible's hosts file.
    - RUN `nano /etc/ansible/hosts` and put our IP with `ansible_python_interpreter=/usr/bin/python3`
 
-![hosts file editing]()  
+![hosts file editing](https://github.com/wazzy88/Wshaikh/blob/adb47c7a2eed04b4aa4eae5977a3b62d87e93703/Resources/Hostsfile.png)  
 
 - In the below play, representing the header of the YAML file, I defined the title of my playbook based on the playbook's main goal by setting the keyword 'name:' to: "Configure Elk VM with Docker". Next, I defined the user account for the SSH connection, by setting the keyword 'remote_user:' to "sysadmin" then activated privilege escalation by setting the keyword 'become:' to "true". 
  
@@ -336,8 +336,8 @@ Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kiba
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-- Web-1 (DVWA 1) | 10.0.0.5
-- Web-2 (DVWA 2) | 10.0.0.6
+- Web-1 (DVWA 1) | 10.1.0.5
+- Web-2 (DVWA 2) | 10.1.0.6
 
 I have installed the following Beats on these machines:
 
@@ -354,7 +354,7 @@ These Beats allow us to collect the following information from each machine:
 
 `Filebeat`: Filebeat detects changes to the filesystem. I use it to collect system logs and more specifically, I use it to detect SSH login attempts and failed sudo escalations.
 
-We will create a [filebeat-config.yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Ansible/filebeat-config.yml) and [metricbeat-config.yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Ansible/metricbeat-config.yml) configuration files, after which we will create the Ansible playbook files for both of them.
+We will create a [filebeat-config.yml]() and [metricbeat-config.yml]() configuration files, after which we will create the Ansible playbook files for both of them.
 
 Once we have this file on our Ansible container, edit it as specified:
 - The username is elastic and the password is changeme.
