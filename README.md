@@ -296,7 +296,7 @@ This step is to restrict access to the ELK VM using Azure's from the ELK Network
 
 Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kibana 
  
-![Access_Kibana]()
+![Access_Kibana](https://github.com/wazzy88/Wshaikh/blob/1e7f10be16050444287337d0a1d4a4ab1c76f1cb/Resources/Kibanaverify.png)
 
 </details>
 
