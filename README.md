@@ -32,9 +32,9 @@ The six files below have been applied and tested to generate an automated ELK St
 
 ---
 
-### Part 1 - Description of the Topology
+### Part 1 - Description of the Azure Network Topology
 
-The main purpose of this network is to expose a traffic to high level cloud infrastructure with monitoring measures and mitigation techniques.
+The below network diagram is a visual representation of the cloud based infrastructure on the Azure platform.
 
 <details>
 <summary> <b> Click here to view Virtual Networks overview. </b> </summary>
