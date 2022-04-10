@@ -199,11 +199,11 @@ In this step, we have to:
 - Add our new VM to the Ansible hosts file.
 - Create a new Ansible playbook to use for our new ELK virtual machine.
 - From our Ansible container, add the new VM to Ansible's hosts file.
-   - RUN `nano /etc/ansible/hosts` and put our IP with `ansible_python_interpreter=/usr/bin/python3`
+   - RUN etc/ansible/, then nano into our file. 
 
 ![hosts file editing](https://github.com/wazzy88/Wshaikh/blob/adb47c7a2eed04b4aa4eae5977a3b62d87e93703/Resources/Hostsfile.png)  
 
-- In the below play, representing the header of the YAML file, I defined the title of my playbook based on the playbook's main goal by setting the keyword 'name:' to: "Configure Elk VM with Docker". Next, I defined the user account for the SSH connection, by setting the keyword 'remote_user:' to "sysadmin" then activated privilege escalation by setting the keyword 'become:' to "true". 
+-  The YAML file, will now configure Elk VM with Docker. Setup below: 
  
  The playbook implements the following tasks:
 
@@ -216,7 +216,7 @@ In this step, we have to:
   tasks:
 ```
  
-In this play, the ansible package manager module is tasked with installing docker.io. The keyword 'update_cache:' is set to "yes" to download package information from all configured sources and their dependencies prior to installing docker, it is necessary to successfully install docker in this case. Next the keyword 'state:' is set to "present" to verify that the package is installed.
+Afterwhich, the ansible package manager module will install docker.io. Setup below:
 
 
 ```yaml
@@ -228,8 +228,7 @@ In this play, the ansible package manager module is tasked with installing docke
         state: present
 ```
 
-In this play, the ansible package manager module is tasked with installing  'pip3', a version of the 'pip installer' which is a standard package manager used to install and maintain packages for Python.
-The keyword 'force_apt_get:' is set to "yes" to force usage of apt-get instead of aptitude. The keyword 'state:' is set to "present" to verify that the package is installed.
+Following the intallation of the docker.io, the ansible package manager will add 'pip3', a version of the 'pip installer' which is a standard package manager used to install and maintain packages for Python. Setup below:
 
 ```yaml
       # Use apt module
@@ -240,7 +239,7 @@ The keyword 'force_apt_get:' is set to "yes" to force usage of apt-get instead o
         state: present
 ```
 
-In this play the pip installer is used to install docker and also verify afterwards that docker is installed ('state: present').
+A verification is needed after docker is installed. Setup below:
 
 ```yaml
       # Use pip module
@@ -250,7 +249,7 @@ In this play the pip installer is used to install docker and also verify afterwa
         state: present
 ```
 
-In this play, the ansible sysctl module configures the target virtual machine (i.e., the Elk server VM) to use more memory. On newer version of Elasticsearch, the max virtual memory areas is likely to be too low by default (ie., 65530) and will result in the following error: "elasticsearch | max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]", thus requiring the increase of vm.max_map_count to at least 262144 using the sysctl module (keyword 'value:' set to "262144"). The keyword 'state:' is set to "present" to verify that the change was applied. The sysctl command is used to modify Linux kernel variables at runtime, to apply the changes to the virtual memory variables, the new variables need to be reloaded so the keyword 'reload:' is set to "yes" (this is also necessary in case the VM has been restarted).
+Here the the ansible sysctl module configures the target virtual machine this our case is the the Elk server VM, to config more memory. An  increase to at least 262144.
 
 ```yaml
       # Use sysctl module
@@ -261,10 +260,6 @@ In this play, the ansible sysctl module configures the target virtual machine (i
         state: present
         reload: yes
 ```
-
-In this play, the ansible docker_container module is used to download and launch our Elk container. The container is pulled from the docker hub repository. The keyword 'image:' is set with the value "sebp/elk:761", "sebp" is the creator of the container (i.e., Sebastien Pujadas). "elk" is the container and "761" is the version of the container. The keyword 'state:' is set to "started" to start the container upon creation. The keyword 'restart_policy:' is set to "always" and will ensure that the container restarts if we restart our web vm. Without it, we will have to restart our container when we restart the machine.
-The keyword 'published_ports:' is set with the 3 ports that are used by our Elastic stack configuration, i.e., "5601" is the port used by Kibana, "9200" is the port used by Elasticsearch for requests by default and "5400" is the default port Logstash listens on for incoming Beats connections (we will go over the Beats we installed in the following section "Target Machines & Beats").
-
 ```yaml
       # Use docker_container module
     - name: download and launch a docker elk container
@@ -279,7 +274,7 @@ The keyword 'published_ports:' is set with the 3 ports that are used by our Elas
           - 5044:5044
 ```
 
-In this play, the ansible systemd module is used to start docker on boot, setting the keyword 'enabled:' to "yes".
+ The ansible systemd module is used to start docker on boot.
 
 ```yaml
       # Use systemd module
@@ -288,8 +283,7 @@ In this play, the ansible systemd module is used to start docker on boot, settin
         name: docker
         enabled: yes
 ```
-![Install_elk_yml]()
-
+	
 Now we can start launching and exposing the container by run
 
 ```bash
