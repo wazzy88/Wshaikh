@@ -298,7 +298,7 @@ This step is to restrict access to the ELK VM using Azure's from the ELK Network
 
 Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kibana 
  
-![Access_Kibana](https://github.com/wazzy88/Wshaikh/blob/bd271b48579cef9fe6cfeec8954a2803d53296be/Resources/Kibana.png)
+![Access_Kibana]()
 
 </details>
 
@@ -326,7 +326,7 @@ These Beats allow us to collect the following information from each machine, so 
 - Filebeat: Filebeat detects changes to the filesystem. 
 - After which we will create the Ansible playbook files for both of them.
 	
-![filebeat-config.yml]() 
+![filebeat-config.yml](https://github.com/wazzy88/Wshaikh/blob/e99c19079bddf8fcf5a28df0963250bcbb1f8b35/Resources/filebeatandmetricbeatsyntax.png) 
 
 Once we have this file on our Ansible container, edit it as specified:
 - The username is elastic and the password is changeme.
@@ -389,7 +389,7 @@ RUN `nano filebeat-playbook.yml` to enable the filebeat service on boot by Fileb
 
 Verify that our playbook is completed by navigate back to the Filebeat installation page on the ELK server GUI
 	
-![Filebeat_playbook_verify1]()
+![Filebeat_playbook_verify1](https://github.com/wazzy88/Wshaikh/blob/bd271b48579cef9fe6cfeec8954a2803d53296be/Resources/Kibana.png)
 		
 	
 `Metricbeat`: Metricbeat detects changes in system metrics, such as CPU usage and memory usage.
