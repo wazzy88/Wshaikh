@@ -6,13 +6,13 @@
 
 Introduction
 
- This repository was created to show the configuration of the cloud network built on the azure platform, along with the penetration testing of the cloud infrastructure.
+ This repository was created to show the configuration of the cloud network built on the Azure platform, along with the implementation of the ELK Stack and testing. 
  
- The objective here is to briefly cover the following in three main areas:
+ The objective here is to briefly cover the following sections divided into three main areas:
  
 Part 1 
 - A visual of the network via a network diagram.
-- A description of the deployment of the cloud infrastucture toplogy
+- A description of the deployment of the cloud infrastructure topology
 
 Part 2
 - Tables specifying access policies and network addresses.
@@ -21,7 +21,7 @@ Part 3
 - Elastic Search, Logstash and Kibana (ELK) introduction and usage.
 - A description of the investigation completed using Kibana dashboard.
  
-These files have been tested and used to generate an automated ELK Stack Deployment on Azure. They can be used to either recreate the entire deployment figured below. Otherwise, select portions of the YAML files may be used to install only certain pieces of it, for example, Filebeat and Metricbeat.
+The six files below have been applied and tested to generate an automated ELK Stack Deployment on Azure. A more detailed walkthrough is explained in the readme below.
 
   - [pentest.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/ansible_config.yml)
   - [install-elk.yml](https://github.com/wazzy88/Wshaikh/blob/a1bda298d92c82ecf7cc548282bc9bb43bc87656/Configuration%20Files/install-elk.yml)
@@ -34,7 +34,7 @@ These files have been tested and used to generate an automated ELK Stack Deploym
 
 ### Part 1 - Description of the Topology
 
-The main purpose of this network is to expose a traffic to high level cloud infrastructre with monitoring measures and mitigation techniques.
+The main purpose of this network is to expose a traffic to high level cloud infrastructure with monitoring measures and mitigation techniques.
 
 <details>
 <summary> <b> Click here to view Virtual Networks overview. </b> </summary>
@@ -67,24 +67,22 @@ Virtual Computing?
 	
 > Virtual Machines
 	
- - The brains of the operation -computers! My off-premesis computers built on the cloud are vital to the enrity of the network. They run the commands to make connections for pentesting and also to house containers.  
+ - The brains of the operation -computers! My off-premises computers built on the cloud are vital to the network. They run the commands to make connections for pentesting and also to house containers.  
 	
 ![Virtual Machines - VMs](https://github.com/wazzy88/Wshaikh/blob/019e7b6b84aa59e0f4f4563b976bcb6803307a56/Azure%20Pictures/09.04.2022_13.31.16_REC.png)
 	
 > Load Balancer
 
 - The load balancer's main purpose is to distribute web traffic across multiple servers. In our network, the load balancer was installed in front of the VM to 
-   - protect Azure resources within virtual networks.
+   
    - monitor and log the configuration and traffic of virtual networks, subnets, and NICs.
    - protect critical web applications
    - deny communications with known malicious IP addresses
    - record network packets
    - deploy network-based intrusion detection/intrusion prevention systems (IDS/IPS)
    - manage traffic to web applications
-   - minimize complexity and administrative overhead of network security rules
-   - maintain standard security configurations for network devices
-   - document traffic configuration rules
-   - use automated tools to monitor network resource configurations and detect changes
+   - act as secondary to network security rules and firewall protection
+   - protect Azure resources within virtual networks.
 	
 ![Load Balancer](https://github.com/wazzy88/Wshaikh/blob/58070d88bab622e39b9a026b4d142d6b4fa7d56e/Azure%20Pictures/09.04.2022_14.12.28_REC.png)
 	
