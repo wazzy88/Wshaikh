@@ -123,7 +123,7 @@ In addition to the above, Azure has provisioned a load balancer in front of all 
 
 ### Part 2 - Access Policies
  
-The idea in our cloud was to bring a 'zero trust model'. Here access was given via NSG through rule setting on specific IP Adresses (listed below). This was companied with crypto keys - public key authentication to help ensure our network held a critiera for securirty.
+The idea in our cloud was to bring a 'zero trust model'. Here access was given via NSG through rule setting on specific IP Addresses (listed below). This was companied with crypto keys - public key authentication to help ensure our network held a criteria for security.
  
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:20.75.255.192. Machines within the network can only be accessed by SSH with crypto key to the Jump Box.
  
@@ -214,7 +214,7 @@ In this step, we have to:
   tasks:
 ```
  
-Afterwhich, the ansible package manager module will install docker.io. Setup below:
+After which, the ansible package manager module will install docker.io. Setup below:
 
 
 ```yaml
@@ -226,7 +226,7 @@ Afterwhich, the ansible package manager module will install docker.io. Setup bel
         state: present
 ```
 
-Following the intallation of the docker.io, the ansible package manager will add 'pip3', a version of the 'pip installer' which is a standard package manager used to install and maintain packages for Python. Setup below:
+Following the installation of the docker.io, the ansible package manager will add 'pip3', a version of the 'pip installer' which is a standard package manager used to install and maintain packages for Python. Setup below:
 
 ```yaml
       # Use apt module
@@ -247,7 +247,7 @@ A verification is needed after docker is installed. Setup below:
         state: present
 ```
 
-Here the the ansible sysctl module configures the target virtual machine this our case is the the Elk server VM, to config more memory. An  increase to at least 262144.
+Here the ansible sysctl module configures the target virtual machine this our case is the the Elk server VM, to config more memory. An  increase to at least 262144.
 
 ```yaml
       # Use sysctl module
@@ -435,7 +435,7 @@ RUN `nano metricbeat-playbook.yml` to enable the metricbeat service on boot by M
 
 Verify that this playbook is completed by navigate back to the Filebeat installation page on the ELK server GUI to ensure it is fully running. 
 	
-That concludes the overview for the setup of the ELK server from azure cloud to testing.
+That concludes the overview for the setup of the ELK server from azure the cloud to a visual representation on the Kibana dashboard.
 	
 Thank you. 
  
