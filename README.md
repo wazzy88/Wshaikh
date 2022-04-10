@@ -193,7 +193,7 @@ Quick overview:
 - Copy the SSH key from the Ansible container on our jump box:
    - RUN `cat id_rsa.pub` Configure a new VM using that SSH key.
  
-#### Created an Ansible play to install and configure an ELK instance.
+#### Created an Ansible play to install and configure an ELK server.
 
 In this step, we have to:
 - Add our new VM to the Ansible hosts file.
